@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Hotel House{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.1/lux/bootstrap.min.css" integrity="sha512-AEz+khxSceaCAGjFlMVVP44z6/Wn0VAE2Q5aSpQR7tHORYsYP2vzU7W3OSvncmYZOX82xCJYd4bq/0iR+Qp9fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-black  fs-5" data-bs-theme="dark"> 
+          {# position-absolute top-0 w-100 z-3  #}
+            <div class="container-fluid ">
+                <a class="navbar-brand fs-4" href="{{ path('home') }}"> Hotel House
+                {# <img src="{{ asset('img/hotel.png') }}" alt="Logo" width="80" height="54" class="d-inline-block "> #}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link active" class="" href="{{ path ('home') }}">Accueil
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path ('app_chambres') }}">Chambres</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path ('app_restaurant') }}">Restaurant</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path ('app_spa') }}">Spa</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path ('app_avis') }}">Avis</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active" href="{{ path ('app_about') }}">L'hôtel</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link active" href="{{ path ('app_actualite') }}">Actualités</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('app_login')}}">Compte</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('app_contact')}}">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{ path ('app_liens_divers') }}">Liens divers</a>
+                  </li>
+
+                </ul>
+                <div>
+                  <ul>
+                    <li>
+                      <i class="flag flag-us"></i>
+                      <i class="flag flag-poland"></i>
+                      <i class="flag flag-china"></i>
+                      </li>
+                  </ul>
+                </div>
+               
+
+        {# <a class="nav-link position-relative active" href="{{ path('cart') }}">Panier #}
+      
+            {# {% if app.session.get('qt') > 0 %}
+              
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                 {{ app.session.get('qt') }}
+              <span class="visually-hidden">unread messages</span>
+              </span>
+              {% endif %} #}
+    
+              </a>
+       
+      {% for message in app.flashes('success') %}
+          <div class="alert alert-success text-center my-2"> {{ message }} </div>
+      {% endfor %} 
+              </div>
+            </div>
+          </nav>
+        {% block body %}
+        
+        {% endblock %}
+
+        
+        <footer class="p-4 bg-black w-90">
+          {# Video #}
+        
+      
+                        {# Texte footer #}
+                <div>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 item">
+                          <h3>Services</h3>
+                          <ul>
+                              <li><a href="#">Web design</a></li>
+                              <li><a href="#">Development</a></li>
+                              <li><a href="#">Hosting</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-sm-6 col-md-3 item">
+                          <h3>About</h3>
+                          <ul>
+                              <li><a href="#">Company</a></li>
+                              <li><a href="#">Team</a></li>
+                              <li><a href="#">Careers</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-md-6 item text">
+                          <h3>Company Name</h3>
+                          <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                      </div>
+                      <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                  </div>
+                  <p class="copyright text-center">By Code Marius</p>
+              </div>
+          </footer>
+      </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>

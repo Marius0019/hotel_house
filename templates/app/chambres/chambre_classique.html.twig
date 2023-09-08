@@ -1,0 +1,135 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+  {# Si je le fais dynamiquement dinamiquement 
+    <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+  {% for chambre in chambres %}
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('uploads/img/' ~ chambre.photo) }}" class="card-img-top" alt="{{ chambre.titre }}"/>
+        <div class="card-body">
+          <h5 class="{{ chambre.titre }}">Card title</h5>
+          <p class="card-text">{{ chambre.descriptioncourte|raw }}</p>
+          <p> Prix journalier : {{ chambre.prixjournalier }} €</p>
+          <p> Date d'enregistrement : {{ chambre.dateenregistrement|date('d/m/Y H:i:s') }}</p>
+        </div>
+      </div>
+    </div>
+  </div> #}
+
+
+<div class="w-100 position-relative ">
+    <img class="img-fluid w-100 z-1" src="{{ asset('img/chambre_1.jpg') }}" alt="">
+    <h1 class="display-7 position-absolute top-50 start-50 translate-middle z-2 fs-1">Chambres Classique</h1>
+</div>
+
+<div class="container">
+  <div class="m-5">
+        <h2 class="text-center">Découvrez vos chambres</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div></div>
+    <div class="col ">
+      <div class="card">
+        <img src="{{ asset('img/chambreclassique_1.jpg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 1</h5>
+          <p class="card-text">
+            Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien!
+          </p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('img/chambreClassique_2.jpeg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 2</h5>
+          <p class="card-text">
+            Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien!
+          </p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('img/chambreclassique_3.jpeg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 3</h5>
+          <p class="card-text">Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien!</p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('img/chambreclassique_4.jpeg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 4</h5>
+          <p class="card-text">
+            Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien !
+          </p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('img/chambreclassique_5.jpeg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 5</h5>
+          <p class="card-text">Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien!</p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ asset('img/chambre_1.jpg')}}" class="card-img-top" alt=""/>
+        <div class="card-body">
+          <h5 class="card-title">La Chambre Classique 6</h5>
+          <p class="card-text">
+            Profitez de nos chambres classique le temps d'une nuit pour faire une pause qui vous fera le plus grand bien !
+          </p>
+          <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_resa')}}">
+            Réservez
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+    
+  {% endblock %}
+

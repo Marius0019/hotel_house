@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+           tu es connectez en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">déconnexion</a>
+        </div>
+    {% endif %}
+    <h1 class="text-center m-5">Mon Compte</h1>
+<div class="container my-4 bg-black p-3">
+ <div class="w-50 card p-5 rounded mx-auto">
+    <h1 class="h3 mb-4 font-weight-normal">Connectez-vous</h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+    value="{{ csrf_token('authenticate') }}">
+</form>
+</div>
+
+           <section>
+            <div class=" p-5 w-100">
+              <h1 class="text-center m-4 text-light">Pourquoi nous contacter ?</h1>
+              <p class="text-light">
+
+                Nous sommes là pour vous aider. Nous sommes une équipe de professionnels expérimentés qui sont passionnés par le service à la clientèle. Nous voulons que vous soyez satisfait de votre expérience avec nous, et nous sommes là pour répondre à toutes vos questions ou préoccupations.
+                
+                Comment nous contacter ?
+                
+                Vous pouvez nous contacter par téléphone au [numéro de téléphone], par e-mail à [adresse e-mail], ou en nous laissant un message sur notre site Web. Nous nous engageons à vous répondre dans les plus brefs délais.
+                
+                Nous sommes impatients de vous entendre !
+                
+                Voici quelques exemples de raisons pour lesquelles vous pourriez nous contacter :
+                
+                Vous avez des questions sur nos produits ou services.
+                Vous avez besoin d'aide pour placer une commande.
+                Vous avez un problème avec votre commande.
+                Vous souhaitez fournir des commentaires ou des suggestions.
+                Nous sommes là pour vous aider à tout moment.</p>
+                
+            </section>
+
+    
+
+</div>
+{% endblock %}

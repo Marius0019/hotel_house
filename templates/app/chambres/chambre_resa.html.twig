@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container mt-3">
+	<h1 class="text-center my-4">Réserver la chambre sélectionné</h1>
+{% for item in chambres %}
+	
+<div class="col-md-10 mx-auto">
+	<div class="card bg-dark text-white mb-3">
+		<h3 class="card-header">{{ chambres.titre }}</h3>
+		<div class="w-100 position-relative ">
+			<img class="img-fluid w-100 z-1" src="{{ asset('img/chambre_1.jpg') }}" alt="">
+			<h1 class="display-7 position-absolute top-50 start-50 translate-middle z-2 fs-1">Validez votre réservation</h1>
+		</div>
+		<div class="card-body">
+			<p class="card-text">{{ chambres.description }}</p>
+			<p class="card-text text-end fw-bold">{{ chambres.prixJournalier }}€/j</p>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+    <div class="col-md-10 mx-auto bg-dark text-white card p-5">
+	{% if app.commande %}
+
+		{{ form_start(form) }}
+
+		{{ form_row(form.dateArrivee) }}
+		{{ form_row(form.dateDepart) }}
+        <div class="text-end mt-4">
+		    <button type="submit" class="btn btn-outline-warning">Réserver à ces dates</button>
+        </div>
+		{{ form_end(form) }}
+	
+	{% endif %}
+    </div>
+</div>
+
+{% endblock %}

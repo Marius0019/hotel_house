@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chambres{% endblock %}
+
+{% block body %}
+
+
+
+
+<!-- Page Header End -->
+
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 " style="max-width: 500px;">
+            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"></div>
+            <h1 class="display-6 mb-5">Chambres</h1>
+        </div>
+
+        {% set compteur = 1 %}
+        {% for chambre in chambres %}
+          
+        
+        {# 1 #}
+
+        {% if compteur is odd %}
+        
+        <div class="row">
+            <div class="col-md-5 offset-md-2 m-3">
+              <img class="img-fluid" src="{{ asset('uploads/images/' ~ chambre.photo) }}" alt>
+            </div>
+            <div class="col-md-5 m-4 p-2">
+              <div class="text-block">
+                <h2>{{ chambre.titre}}</h2>
+                <p>{{ chambre.descriptionCourte|raw }}</p>
+                <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_show', {id: chambre.id})}}">Découvrir
+                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          {# 2 #}
+          <div class="row">
+            <div class="col-md-5 m-4 p-2 ">
+                <h2>{{ chambre.titre}}</h2>
+           
+                <p>{{ chambre.descriptionCourte|raw }}</p>
+           
+                <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_show', {id: chambre.id})}}">
+                    Découvrir
+                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+           
+            <div class="col-md-5">
+              <div class="text-block">
+
+                <img class="img-fluid" src="{{ asset('uploads/images/' ~ chambre.photo) }}" alt>
+
+              </div>
+            </div>
+          </div>
+      {% endif %}
+
+      {% set compteur = compteur + 1 %}
+
+      {% endfor %}
+          {# 3 #}
+          {# <div class="row">
+            <div class="col-md-5 offset-md-2 m-3">
+              <img class="img-fluid" src="{{ asset('img/chambre_3.jpg') }}" alt>
+            </div>
+           
+            <div class="col-md-5 m-4 p-2">
+              <div class="text-block">
+                <h2>Chambre Suite</h2>
+           
+                <p>Nos suites sont à la fois spacieuse et lumineuse, afin de séjourner au sein de notre hôtel dans les meilleures condition, n'hésitez plus.</p>
+           
+                <a class="btn btn-outline-primary px-3" href="{{ path('app_chambre_suite')}}">
+                    Découvrir
+                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div> #}
+        </div>
+    </div>
+    </div>
+</div>
+{# ----------------------------------------------------- #}
+
+
+
+{% endblock %}
